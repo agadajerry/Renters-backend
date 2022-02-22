@@ -182,3 +182,16 @@ export const editLoanRequest = async (
     console.error(error);
   }
 };
+
+//get all transaction
+
+export const getAllTransactions = async (req: Request, res: Response)=>{
+
+    try{
+            const result = await Renters.find({});
+
+            if(result) return res.status(200).json({msg:result});
+    }catch(err:any){
+        console.error(err)
+    }
+}

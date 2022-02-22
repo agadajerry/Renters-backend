@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.editLoanRequest = exports.userRenter = exports.userLogin = exports.registerUser = void 0;
+exports.getAllTransactions = exports.editLoanRequest = exports.userRenter = exports.userLogin = exports.registerUser = void 0;
 const renterPaymentModel_1 = __importDefault(require("../Models/renterPaymentModel"));
 const userModel_1 = __importDefault(require("../Models/userModel"));
 const inputValidation_1 = require("../utils/inputValidation");
@@ -136,3 +136,15 @@ const editLoanRequest = async (req, res, next) => {
     }
 };
 exports.editLoanRequest = editLoanRequest;
+//get all transaction
+const getAllTransactions = async (req, res) => {
+    try {
+        const result = await renterPaymentModel_1.default.find({});
+        if (result)
+            return res.status(200).json({ msg: result });
+    }
+    catch (err) {
+        console.error(err);
+    }
+};
+exports.getAllTransactions = getAllTransactions;

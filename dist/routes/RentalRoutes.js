@@ -33,4 +33,6 @@ router.post("/login", renterControl.userLogin);
 router.post("/renter-detail", renterControl.userRenter);
 //edit user
 router.put("/update", renterControl.editLoanRequest);
+//get all transaction
+router.get("/transaction", renterControl.getAllTransactions);
 exports.default = router;

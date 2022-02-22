@@ -21,6 +21,11 @@ router.post("/renter-detail", renterControl.userRenter);
 router.put("/update", renterControl.editLoanRequest)
 
 
+//get all transaction
+
+router.get("/transaction", renterControl.getAllTransactions);
+
+
 
 
 
